@@ -1,13 +1,10 @@
 <template>
   <div>
-    <ul class="header-menu">
+    <ul class="nav">
     <li class="nav-item"
-        v-on:mouseover="showTooltip(index)"
-        v-on:mouseleave="hideTooltip(index)"
         v-for="(menu, index) in menus"
         :key="index"
-        v-show="isShow">
-       <span v-if="hoverFlag && index === hoverIndex" class="tips">{{menu.tips}}</span>
+        >
        <router-link
         :to="menu.path"
         class="nav-link active"
@@ -24,12 +21,13 @@ export default {
   name: 'HeaderMenu',
   data () {
     return {
-      isShow:false,
       menus:  [
-        {title: 'me', path: '/me', tips: '私について'},
-        {title: 'skill', path: '/skill', tips: 'できること'},
-        {title: 'work', path: '/work', tips: 'やったこと'},
-        {title: 'contact', path: '/contact', tips: '連絡先'}
+        { title: 'はじめに'},
+        {title: '私について', path: '/me', tips: '私について'},
+        {title: 'スキル', path: '/skill', tips: 'できること'},
+        {title: '作ったもの', path: '/work', tips: 'やったこと'},
+        {title: '生い立ち', path: '/work', tips: 'やったこと'},
+        {title: '連絡先', path: '/contact', tips: '連絡先'}
       ],
       hoverFlag:false,
       hoverIndex: null
@@ -49,30 +47,11 @@ export default {
 </script>
 
 <style lang="scss">
-
-*{
-  font-family: 'Baloo Tammudu 2', cursive;
-  font-weight: 400;
-}
-
-
-ul {
+.nav {
   display: flex;
-}
-
-li {
-  list-style: none;
-
-}
-a {
-  /* animation-name: show; */
-  animation-duration: 3s;
-}
-
-.header-menu {
-  display: flex;
+  justify-content: center;
   flex-direction: column;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
   height: 40vh;
   padding: 8px 12px;
   font-size: 16px;
@@ -81,28 +60,14 @@ a {
   left: 0;
   width: 240px;
   z-index: 10;
+  border-radius: 4px;
+  filter: drop-shadow(2px 3px 3px #e4e4e4);
+  .nav-item {
+    font-size: 20px;
+    list-style: none;
+    padding: 2px;
+    margin-left: 6px;
+  }
 }
 
-.nav-item {
-
-}
-
-.weather {
-  width: 200px;
-}
-
-@keyframes rumble {
-  0%	{transform: translateY(0px);}
-
-	30%	{transform: translateY(-10px);}
-
-  100% {transform: translateY(0px);}
-
-}
-
-
-@keyframes show {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
 </style>

@@ -3,13 +3,15 @@
     <header>
       <div class="header-top">
         <i class="fas fa-bars fa-2x"
-            @click="openMenu()"
+            @click="showMenu = !showMenu"
         ></i>
          <!-- <wheather></wheather> -->
       </div>
 
     </header>
-    <header-menu class="header-menu" v-show="showHeaderMenu"></header-menu>
+    <transition name="fade">
+       <header-menu class="header-menu" v-show="showMenu"></header-menu>
+    </transition>
     <hero></hero>
     <scroll-to-top></scroll-to-top>
       <!-- <my-button>Default</my-button> -->
@@ -55,7 +57,7 @@ export default {
   data () {
     return {
       greeting: '時間帯で挨拶が切り替わる',
-      showheaderMenu: false
+      showMenu: false
     }
 
   },
@@ -73,6 +75,13 @@ export default {
 
 
 <style lang="scss">
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 
 @media screen and (min-width:480px) {
     /*　画面サイズが480pxからはここを読み込む　*/
@@ -113,6 +122,11 @@ export default {
   box-sizing: border-box;
   position: relative;
 
+}
+
+*{
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-weight: 400;
 }
 
 header {
