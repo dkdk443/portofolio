@@ -1,27 +1,47 @@
 <template>
-  <div class="main-content">
+  <div class="main-content" id="form">
     <div class="title-box">
-      <div class="main-title">My Portfolio</div>
-        <div class="text-center">
+      <div
+        class="main-title"
+        :style="{'background-color': bgColor, color: textColor}"
+      > </div>
+      <div class="text-center">
       </div>
-      <div class="sub-title">Kana Demoto</div>
-      <div class="color-box">
-        <div id="color1" class="color"></div>
-        <div id="color2" class="color"></div>
+      <div class="sub-title" :style="{color: bgColor}">K.D</div>
+      <!-- <div class="color-box">
+        <div id="color1" class="color" @click="changeColor1"></div>
+        <div id="color2" class="color" @click="changeColor2"></div>
         <div id="color3" class="color"></div>
         <div id="color4" class="color"></div>
         <div id="color5" class="color"></div>
         <div id="color6" class="color"></div>
-      </div>
+      </div> -->
+      <p>ssssssss</p>
+      <p>aaaaaaaaaaaaa</p>
     </div>
   </div>
 </template>
 <script>
-/* eslint-disable */ 
+/* eslint-disable */
 export default {
+  el:'#form',
   data() {
     return {
       dialog: false,
+      bgColor:'',
+      textColor:'',
+    }
+  },
+  methods: {
+    changeColor1: function() {
+      this.bgColor = '#08A5AE'
+      this.textColor = 'white'
+    },
+    changeColor2: function() {
+
+    },
+    doAnimation: function(){
+
     }
   }
 }
@@ -29,59 +49,49 @@ export default {
 
 <style scoped>
 
-  @keyframes toRight {
+  /* @keyframes toRight {
   0% {
      opacity:0;
-     transform: translateX(-100px); 
+     transform: translateX(-100px);
   }
   95% {
-    transform: translateX(10px); 
+    transform: translateX(10px);
   }
   100% {
     opacity: 1;
   }
-}
-@keyframes toLeft {
+} */
+/* @keyframes toLeft {
   0% {
      opacity:0;
-     transform: translateX(100px); 
+     transform: translateX(100px);
   }
   95% {
-    transform: translateX(-10px); 
+    transform: translateX(-10px);
   }
   100% {
     opacity: 1;
   }
-}
+}*/
+
 
 .main-content {
-  /* background-image: url(../assets/images/neko-top.png); */
-  background-size:cover;
-  height: 100vh;
+  padding: 12px;
+  min-height: 100vh;
 }
-.title-box {
-  margin: 32px 0;
-  line-height: 160px;
-  text-align: center;
-  font-family: 'Baloo Tammudu 2', cursive;
- 
-  height: max-content;
-  width: 100%;
 
-  /* background-repeat: repeat-x; */
-}
 .main-title {
   animation-name: toRight;
   animation-duration: 2s;
   animation-timing-function: ease;
-  font-size: 68px;
+  font-size: 30px;
 }
 
 .sub-title {
   animation-name: toLeft;
   animation-duration: 2s;
   animation-timing-function: ease;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .color-box {

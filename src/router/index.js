@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Top from '@/components/Top'
-// import AboutMe from '@/components/AboutMe'
-// import Contact from '@/components/Contact'
-// import Work from '@/components/Work'
+import Me from '@/components/Me'
+import Contact from '@/components/Contact'
+import Work from '@/components/Work'
+import Skill from '@/components/Skill'
 // import TodoList from '@/components/Works/TodoList'
 // import FontAwesome from '@fortawesome/fontawesome-free'
 // src/plugins/vuetify.js
@@ -11,27 +12,34 @@ import Top from '@/components/Top'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Top',
       component: Top
-    }
-    // {
-    //   path: '/me',
-    //   name: 'aboutme',
-    //   component: AboutMe
-    // },
-    // {
-    //   path: '/contact',
-    //   name: 'contact',
-    //   component: Contact
-    // },
-    // {
-    //   path: '/work',
-    //   name: 'work',
-    //   component: Work
-    // },
+    },
+    {
+      path: '/me',
+      name: 'me',
+      component: Me
+    },
+    {
+      path: '/skill',
+      name: 'skill',
+      component: Skill
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
+    },
+    {
+      path: '/work',
+      name: 'work',
+      component: Work
+    },
+
     // {
     //   path: '/work/todo',
     //   name: 'todo',
