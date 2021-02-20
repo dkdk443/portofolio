@@ -84,33 +84,21 @@ export default {
 }
 
 @media screen and (min-width:480px) {
-    /*　画面サイズが480pxからはここを読み込む　*/
   #app {
   background-color: #08A5AE;
   }
 }
 @media screen and (min-width:768px) and ( max-width:1024px) {
-    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
   #app {
     background-color:#6C5420;
-
-  }
-  .hero-img_sm {
-    position: absolute;
-    display: none;
-
   }
 }
 @media screen and (min-width:1024px) {
-    /*　画面サイズが1024pxからはここを読み込む　*/
   #app {
       background-color: #817684;
   }
-  .hero-img_sm {
-    display: none;
-  }
-
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
