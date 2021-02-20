@@ -6,7 +6,7 @@
         :key="index"
         >
        <router-link
-        :to="menu.path"
+        :to="menu.hash"
         class="nav-link active"
        >{{menu.title}}</router-link>
     </li>
@@ -23,11 +23,11 @@ export default {
     return {
       menus:  [
         { title: 'はじめに'},
-        {title: '私について', path: '/me', tips: '私について'},
-        {title: 'スキル', path: '/skill', tips: 'できること'},
-        {title: '作ったもの', path: '/work', tips: 'やったこと'},
-        {title: '生い立ち', path: '/work', tips: 'やったこと'},
-        {title: '連絡先', path: '/contact', tips: '連絡先'}
+        {title: '私について', hash: '#me', tips: '私について'},
+        {title: 'スキル', hash: '#skill', tips: 'できること'},
+        {title: '作ったもの', hash: '#work', tips: 'やったこと'},
+        {title: '生い立ち', hash: '#background', tips: 'やったこと'},
+        {title: '連絡先', hash: '#contact', tips: '連絡先'}
       ],
       hoverFlag:false,
       hoverIndex: null

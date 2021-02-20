@@ -12,7 +12,7 @@
         </div>
 
       </div>
-      <div class="inner_content__box">
+      <div class="inner_content__box" id="me">
         <h2>私について</h2>
         <hr>
         <div class="me-img">
@@ -23,7 +23,7 @@
           <p></p>
         </div>
       </div>
-      <div class="inner_content__box">
+      <div class="inner_content__box" id="skill">
         <h2>作ったもの</h2>
         <hr>
         <h3>人間関係を円滑にする類人猿分類</h3>
@@ -32,12 +32,12 @@
           <p></p>
         </div>
       </div>
-      <div class="inner_content__box">
+      <div class="inner_content__box" id="background">
         <h2>生い立ち</h2>
         <hr>
 
       </div>
-       <div class="inner_content__box">
+       <div class="inner_content__box" id="contact">
         <h2>連絡先</h2>
         <hr>
         <form action="">
