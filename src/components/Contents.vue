@@ -23,7 +23,7 @@
           <p></p>
         </div>
       </div>
-      <div class="inner_content__box" id="skill">
+      <div class="inner_content__box" id="work">
         <h2>作ったもの</h2>
         <hr>
         <h3>人間関係を円滑にする類人猿分類</h3>

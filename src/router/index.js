@@ -15,36 +15,10 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Top',
-      component: Top
-    },
-    {
-      path: '/me',
-      name: 'me',
-      component: Me
-    },
-    {
-      path: '/skill',
-      name: 'skill',
-      component: Skill
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: Contact
-    },
-    {
       path: '/work',
       name: 'work',
       component: Work
     },
-
-    // {
-    //   path: '/work/todo',
-    //   name: 'todo',
-    //   component: TodoList
-    // }
   ],
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {

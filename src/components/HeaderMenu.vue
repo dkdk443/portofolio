@@ -8,6 +8,7 @@
        <router-link
         :to="menu.hash"
         class="nav-link active"
+        @click.native="closeMenu()"
        >{{menu.title}}</router-link>
     </li>
 
@@ -34,12 +35,8 @@ export default {
     }
   },
   methods: {
-    showTooltip(index) {
-      this.hoverIndex = index
-      this.hoverFlag = true
-    },
-    hideTooltip() {
-      this.hoverFlag = false
+    closeMenu() {
+      this.$emit('closeMenu');
     }
   }
 }

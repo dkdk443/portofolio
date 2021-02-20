@@ -10,7 +10,7 @@
 
     </header>
     <transition name="fade">
-       <header-menu class="header-menu" v-show="showMenu"></header-menu>
+       <header-menu class="header-menu" v-show="showMenu" @closeMenu="closeMenu"></header-menu>
     </transition>
     <hero></hero>
     <scroll-to-top></scroll-to-top>
@@ -65,9 +65,9 @@ export default {
      funfun: function() {
         alert('funfun')
       },
-      openMenu() {
-       this.showheaderMenu = true
-    }
+      closeMenu() {
+        this.showMenu = false;
+      }
   }
 }
 
