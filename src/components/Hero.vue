@@ -20,7 +20,6 @@
   .hero-img_lg {
     display: none;
   }
-
 }
 @media screen and (min-width:1024px) {
   .hero-img_sm {
@@ -31,10 +30,17 @@
     width: 100vw;
     object-fit: cover;
   }
+    .hero {
+    &__title {
+      margin-top: 60px;
+    }
+  }
 
 }
 .hero {
    position: relative;
+   display: flex;
+   justify-content: center;
    &__title {
      position: absolute;
      top: 62%;

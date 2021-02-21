@@ -2,21 +2,94 @@
   <div id="app">
     <header>
       <div class="header-top">
-        <i class="fas fa-bars fa-2x"
+        <div class="icon-menu">
+           <i class="fas fa-bars fa-2x"
             @click="showMenu = !showMenu"
         ></i>
+        </div>
          <!-- <wheather></wheather> -->
       </div>
-
     </header>
     <transition name="fade">
        <header-menu class="header-menu" v-show="showMenu" @closeMenu="closeMenu"></header-menu>
     </transition>
     <hero></hero>
+    <div>
+    <div class="inner_content">
+      <div class="inner_content__box me" id="me">
+        <h2>私について</h2>
+        <hr>
+        <div class="me-img">
+          <img src="/static/images/cat-icon.png" alt="" width="100px">
+          <div class="me__title">
+            <span class="label">職種</span>エンジニア（JavaScript, Vue.js, PHP, Laravel）
+            プロジェクトマネージャー
+          </div>
+        </div>
+        <div class="texts">
+          <div class="keywords">
+            <div class="label">キーワード</div>
+            食　小売業　飲食業　システム　デジタル・DX　プロジェクト管理 　資料作成　動画編集
+          </div>
+          <ul>
+            <li>K.D / 1995年生まれ / 広島県出身</li>
+            <li>大学時代に懐石料理店でアルバイトをしたことをきっかけに、<strong>「食」</strong>に興味を持ち、大学卒業後スーパーマーケットに就職しました。スーパーでは接客や売り場作り、レジ業務、発注業務などを行い、食品の加工技術を向上させることに専念しました。</li>
+            <li>消費者と最も近い場所で食に関わることにやりがいを覚える一方で、デジタル化が進んでいない小売業の現場に疑問を抱くようになりました。</li>
+            <li>当時の会社は<strong>消費者</strong>を非常に大切にしていました。それゆえに、そこで働く人が長時間労働で<strong>疲弊</strong>していくのを見てきました。それをどうすることもできず、無力感を覚えるようになりました。</li>
+            <li>ある日偶然見ていた動画をきっかけに<strong>「プログラミングを勉強したい！」</strong>と強く思い、プログラミングを学ぶため単身上京しました。</li>
+            <li>３ヶ月ほどプログラミングスクールでプログラミングの基礎を学び、2019/8より都内の飲食店向けのSaaSを提供するベンチャー企業にカスタマーサポートとして入社しました。</li>
+            <li>現在は開発チームに異動し、PMとして<strong>開発プロジェクトを管理</strong>したり、お客様の要望を整理して<strong>仕様を検討・開発資料を作成</strong>したりしています。</li>
+            <li><strong>動画編集</strong>もしたりします。</li>
+
+            <li>趣味は日本酒を飲んだり美味しいものを食べることです。冬場は編み物をして過ごします。</li>
+            <li>猫が好きです。</li>
+          </ul>
+          詳細はnoteで
+          <a href="https://note.com/dkdkd444/n/n513aba2b8d41" target="_blank">
+             <img src="/static/images/logo-note.png" alt="" width="240px">
+          </a>
+        </div>
+      </div>
+      <skill></skill>
+      <div class="inner_content__box" id="work">
+
+        <h2>作ったもの</h2>
+        <hr>
+        <a href="">
+          <img src="/static/images/ruijinen-banner.png" alt="人間関係を円滑にする類人猿分類" width="100%">
+        </a>
+        <div>
+          <p>Vue.js/Vue CLI/Firebase</p>
+          <p></p>
+        </div>
+      </div>
+      <div class="inner_content__box" id="background">
+        <h2>生い立ち</h2>
+        <hr>
+        <ul class="timeline">
+          <li class="timeline__list">
+            <span>1995</span>
+            <div class="timeline__content">sss</div>
+          </li>
+        </ul>
+
+      </div>
+       <div class="inner_content__box" id="contact">
+        <h2>連絡先</h2>
+        <hr>
+        <form action="">
+          <label for="email">メールアドレス</label>
+          <input type="email" name="email" id="email" placeholder="***@mail.com">
+          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+          <input type="button" value="送信！">
+        </form>
+
+      </div>
+    </div>
+  </div>
     <scroll-to-top></scroll-to-top>
       <!-- <my-button>Default</my-button> -->
       <!-- <router-view></router-view> -->
-    <contents></contents>
 
       <!--  -->
 
@@ -30,29 +103,25 @@
 <script>
 /* eslint-disable */
 import HeaderMenu from './components/HeaderMenu'
-import Me from './components/Me'
-import Contact from './components/Contact'
 import ScrollToTop from './components/ScrollToTop'
 import TimeLine from './components/TimeLine'
-import Skill from './components/Skill'
 import Wheather from './components/Wheather'
 // import '@fortawesome/fontawesome-free'
 // import ElementUI from 'element-ui'
 import Hero from './components/Hero'
 import Contents from './components/Contents'
+import Skill from './components/Skill'
 
 export default {
   name: 'App',
   components: {
     HeaderMenu,
-    Me,
-    Contact,
     ScrollToTop,
     TimeLine,
-    Skill,
     Wheather,
     Hero,
     Contents,
+    Skill
   },
   data () {
     return {
@@ -83,19 +152,29 @@ export default {
   opacity: 0;
 }
 
+.icon-menu {
+  display: block;
+}
+.icon-back {
+  display: none;
+}
+
 @media screen and (min-width:480px) {
   #app {
-  background-color: #08A5AE;
+
   }
+
 }
-@media screen and (min-width:768px) and ( max-width:1024px) {
-  #app {
-    background-color:#6C5420;
-  }
-}
+
 @media screen and (min-width:1024px) {
-  #app {
-      background-color: #817684;
+  .inner_content {
+    margin: 0 auto;
+    width: 800px;
+    &__box {
+      background-color: #fff;
+      border-radius: 12px;
+      margin: 32px 0;
+    }
   }
 }
 
@@ -163,16 +242,140 @@ a:visited {
   font-family: 'Baloo Tammudu 2', cursive;
 }
 
+@media screen and (min-width:480px) {
+  .inner_content {
+    padding: 0 30px;
+    &__box {
+      min-height: 100vh;
+    }
+    p {
+      font-size: 14px;
+    }
 
-@keyframes show-animation {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity: 1;
-
+    .me-img {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 220px;
+      }
+    }
   }
 }
+
+@media screen and (min-width:1024px) {
+  .inner_content {
+    padding: 0 30px;
+    &__box {
+      padding: 40px;
+    }
+    p {
+      font-size: 14px;
+    }
+
+    .me-img {
+      justify-content: center;
+      img {
+        width: 300px;
+      }
+    }
+}
+}
+.inner_content {
+  padding: 0 30px;
+  &__box {
+    min-height: 100vh;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .me-img {
+    img {
+      width: 220px;
+    }
+  }
+}
+.me {
+  &__title {
+    padding: 12px;
+    font-weight: bold;
+    .label {
+      font-size: 22px;
+      font-weight: bold;
+      background-color: #595050;
+      color: white;
+      padding: 2px 10px;
+      margin: 8px auto;
+      display: block;
+      border-radius: 8px;
+      text-align: center;
+      padding-top: 10px;
+
+    }
+  }
+}
+
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.keywords {
+  border: #fdc44f solid 3px;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 20px;
+  .label {
+    font-weight: bold;
+  }
+
+}
+
+.texts {
+  ul {
+    font-size: 16px;
+    list-style: none;
+    padding: 10px;
+    li {
+      line-height: 1.8em;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+#work {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+#background {
+  .timeline {
+    &__content {
+      background-color: #e2dddd;
+      padding: 20px;
+      margin-left: 32px;
+      border-radius: 8px;
+    }
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #app {
   min-height: 100vh;

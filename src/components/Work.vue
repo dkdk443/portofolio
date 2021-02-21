@@ -1,17 +1,18 @@
 <template>
   <div>
-    <div class="row">
+    ワークス
+    <!-- <div class="row">
       <div class="col" v-for="(card, index) in cards" :key="index">
         <div class="card" style="width: 18rem;" >
           <img :src="card.src" class="card-img-top" alt="">
         <div class="card-body">
-          
+
           <h5 class="card-title">{{card.title}}</h5>
           <p class="card-text">{{card.body}}</p>
         </div>
       </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -47,9 +48,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   img {
     width: 250px;
   }
+  .hero {
+    display: none;
+  }
+
+.icon-menu {
+  display: none;
+}
+.icon-back {
+  display: block;
+}
 </style>
 

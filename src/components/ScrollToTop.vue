@@ -30,7 +30,7 @@ export default {
     display: flex;
     justify-content: center;
     .fas {
-      color: #CD8154;
+      color: #fdc44f;
     }
 
   }

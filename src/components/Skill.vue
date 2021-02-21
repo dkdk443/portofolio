@@ -1,83 +1,49 @@
 <template>
-  <div>
-    <div class="card text-center">
-      <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Active tab</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tab</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled tab</a>
-          </li>
-        </ul>
+   <div class="inner_content__box" id="skill">
+        <h2>スキル</h2>
+        <table>
+          <tr v-for="skill in skills" :key="skill.id"><th>{{ skill.name}}</th><td></td><td>{{skill.rate}}</td></tr>
+        </table>
       </div>
-      <div class="card-body">
-        <h4 class="card-title">Skills</h4>
-      <ul class="skills row">
-      <li v-for="skill in skills" :key="skill.id" class="skill col-3">
-        <div class="skill_img">
-            <img :src="skill.src" class="skill_img">
-        </div>
-        <div class="skill_name">
-            {{ skill.name }}
-        </div>
-        <div class="skill_detail">
-            {{ skill.detail}}
-        </div>
-        <div class="skill_tags">
-          <div class="skill_tag" v-for="tag in skill.tags" :key="tag">{{tag}}</div>
-        </div>
-      </li>
-      </ul>
-      </div>
-    </div>
-
-  </div>
 </template>
-
 <script>
-
 export default {
-  data(){
+  data() {
     return {
       skills: [
-        {id: 1, src: '/static/images/logo.png', name: 'HTML&CSS', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。',
-        tags: ['プログラミング', 'コーディング']},
-        {id: 2, src: '/static/images/js-logo.png', name: 'JavaScript',  detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
-        {id: 3, name: 'Ruby', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
-        {id: 4, name: 'PHP', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
-        {id: 5, name: 'Adbe XD Photoshop Illustrator', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
-        {id: 6, name: '社内システムの要件定義・構築・運用・保守まで', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
-        {id: 7, name: 'APIを利用した社内ツールの連携等の業務改善', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
-        {id: 8, name: 'Vue.js', detail: 'HTMLとCSSは独学で勉強しました。会社ではLPやサポートページのコーディング業務を行いました。'},
+        {id: 1, name: 'HTML/CSS', rate: 'レスポンシブ対応を踏まえてWEBサイトのコーディングができる'},
+        {id: 2, name: 'JavaScript', rate: '基本的なプログラミング（DOM操作・関数（アロー関数）・配列操作・条件分岐・非同期処理など）ができる'},
+        {id: 3, name:'Vue.js/Vue CLI', rate: 'ディレクティブを用いることができる。vue-routerを用いて簡単なシングルページアプリケーションが実装できる。コンポーネントを用いてメンテナンスのしやすさを意識したコードを書くことができる'},
+        {id: 4,name:'PHP/Larevel', rate: 'CRUDの基本的なアプリケーションを実装できる'},
+        {id: 5,name:'Adobe XD', rate: '画面仕様を作成することができる'},
+        {id: 6,name:'Premier Pro(動画編集)', rate: '簡単な動画編集ができる'},
+        {id: 7, name: 'Git/GitHub', rate: 'コマンドラインを用いて基本的な操作（add/push/branch/checkout/merge）ができる'},
+        {id: 8, name: 'サポート・システムトラブル対応', rate: 'お客様の状況をヒアリングし、問題の切り分けができる・障害報告書のベースを作成することができる'},
+        {id: 9, name:'コミュニケーション', rate: '営業〜開発までチームの垣根を超えてコミュニケーションを図ることができる／お客様の要望を整理しエンジニアに正確に伝えることができる'},
+        {id: 10, name:'資料作成', rate: 'PowerPont/Excel/Google Slide/Google SpreadSheet/Adobe XDを用いて提案書や簡単な開発資料（業務フロー・機能一覧・画面遷移図）を作成できる'},
+        {id:11, name: 'Excel/SpreadSheet', rate: '関数を利用してデータの集計や精査ができる（v-lookup/exact/count/countif　など'},
+        {id:12, name: 'kintone', rate: '標準機能を理解し、社内の簡単なシステム（SFA・CRM）を構築することができる。JavaScriptを用いてカスタマイズ開発ができる'},
       ]
     }
-  }
+  },
+
 }
 </script>
-
-<style>
-.skills {
-  list-style: none;
+<style lang="scss" scoped>
+table {
+  tr {
+    border-bottom: 1px dashed gray;
+  }
+  th {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  td {
+    padding: 10px;
+    font-size: 16px;
+  }
 }
 
 
-
-.skill_detail {
-  font-size: 14px;
-}
-
-.skill_img {
-  width: 160px;
-  padding: 8px;
-  margin: auto;
-}
-
-.skill_tags {
-  display: flex;
-  font-size: 12px;
-}
 </style>
