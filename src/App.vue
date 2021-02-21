@@ -148,6 +148,16 @@ export default {
 .icon-back {
   display: none;
 }
+.hero {
+  display: block;
+}
+table {
+  display: flex;
+  flex-direction: column;
+  th {
+    width: 140px;
+  }
+}
 
 
 @media screen and (min-width:1024px) {
