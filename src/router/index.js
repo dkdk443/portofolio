@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Work from '@/components/Work'
-import Contents from '@/components/Contents'
 
 // import TodoList from '@/components/Works/TodoList'
 // import FontAwesome from '@fortawesome/fontawesome-free'
