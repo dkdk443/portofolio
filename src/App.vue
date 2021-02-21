@@ -63,18 +63,8 @@
           <p></p>
         </div>
       </div>
-      <div class="inner_content__box" id="background">
-        <h2>生い立ち</h2>
-        <hr>
-        <ul class="timeline">
-          <li class="timeline__list">
-            <span>1995</span>
-            <div class="timeline__content">sss</div>
-          </li>
-        </ul>
-
-      </div>
-       <div class="inner_content__box" id="contact">
+      <background></background>
+       <!-- <div class="inner_content__box" id="contact">
         <h2>連絡先</h2>
         <hr>
         <form action="">
@@ -84,7 +74,7 @@
           <input type="button" value="送信！">
         </form>
 
-      </div>
+      </div> -->
     </div>
   </div>
     <scroll-to-top></scroll-to-top>
@@ -104,24 +94,24 @@
 /* eslint-disable */
 import HeaderMenu from './components/HeaderMenu'
 import ScrollToTop from './components/ScrollToTop'
-import TimeLine from './components/TimeLine'
 import Wheather from './components/Wheather'
 // import '@fortawesome/fontawesome-free'
 // import ElementUI from 'element-ui'
 import Hero from './components/Hero'
 import Contents from './components/Contents'
 import Skill from './components/Skill'
+import Background from './components/Background.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderMenu,
     ScrollToTop,
-    TimeLine,
     Wheather,
     Hero,
     Contents,
-    Skill
+    Skill,
+    Background
   },
   data () {
     return {
@@ -159,12 +149,6 @@ export default {
   display: none;
 }
 
-@media screen and (min-width:480px) {
-  #app {
-
-  }
-
-}
 
 @media screen and (min-width:1024px) {
   .inner_content {
@@ -339,7 +323,7 @@ h2 {
     padding: 10px;
     li {
       line-height: 1.8em;
-      padding-bottom: 8px;
+      padding-bottom: 16px;
     }
   }
 }
@@ -350,16 +334,6 @@ h2 {
   }
 }
 
-#background {
-  .timeline {
-    &__content {
-      background-color: #e2dddd;
-      padding: 20px;
-      margin-left: 32px;
-      border-radius: 8px;
-    }
-  }
-  }
 
 
 
