@@ -1,13 +1,36 @@
 <template>
   <div class="hero">
-    <img src="/static/images/pc_hero.png" class="hero-img_lg">
-    <img src="/static/images/phone_hero.png" class="hero-img_sm">
-      <h1 class="hero__title"
-      >Welcome to my portfolio!!</h1>
+    <img :src="pcImgPath" class="hero-img_lg">
+    <img :src="smImgPath" class="hero-img_sm">
+    <transition appear name="zoom">
+      <h1 class="hero__title">Welcome to my portfolio!!</h1>
+    </transition>
+
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      pcImgPath: '/static/images/pc_hero.png',
+      smImgPath: '/static/images/phone_hero.png'
+    }
+  },
+}
+</script>
+
 <style lang="scss">
+
+.zoom-enter-active, .zoom-leave-active {
+  transition: opacity 1s;
+}
+
+.zoom-enter, .zoom-leave-to  {
+  opacity: 0;
+
+}
+
 .hero-img_lg {
     display: none;
 }
@@ -52,4 +75,5 @@
   z-index: -10;
   }
 }
+
 </style>

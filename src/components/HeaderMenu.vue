@@ -5,11 +5,11 @@
         v-for="(menu, index) in menus"
         :key="index"
         >
-       <router-link
+       <!-- <router-link
         :to="menu.hash"
         class="nav-link active"
         @click.native="closeMenu()"
-       >{{menu.title}}</router-link>
+       >{{menu.title}}</router-link> -->
     </li>
 
   </ul>

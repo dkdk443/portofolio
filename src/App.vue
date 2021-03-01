@@ -15,12 +15,12 @@
     </transition>
     <hero></hero>
     <div>
-    <div class="inner_content">
-      <div class="inner_content__box me" id="me">
+    <div class="inner_content" v-if="showContent">
+      <div class="inner_content__box me" id="me" v-on:load="load">
         <h2>私について</h2>
         <hr>
         <div class="me-img">
-          <img src="/static/images/cat-icon.png" alt="" width="100px">
+          <img :src="heroImgPath" alt="" width="100px" v-on:load="load">
           <div class="me__title">
             <span class="label">職種</span>エンジニア（JavaScript, Vue.js, PHP, Laravel）
             プロジェクトマネージャー
@@ -44,10 +44,10 @@
             <li>趣味は日本酒を飲んだり美味しいものを食べることです。冬場は編み物をして過ごします。</li>
             <li>猫が好きです。</li>
           </ul>
-          詳細はnoteで
+          <!-- 詳細はnoteで
           <a href="https://note.com/dkdkd444/n/n513aba2b8d41" target="_blank">
              <img src="/static/images/logo-note.png" alt="" width="240px">
-          </a>
+          </a> -->
         </div>
       </div>
       <skill></skill>
@@ -55,7 +55,7 @@
 
         <h2>作ったもの</h2>
         <hr>
-        <a href="">
+        <a href="https://apediagnosis-9ecfc.web.app/" target="_blank">
           <img src="/static/images/ruijinen-banner.png" alt="人間関係を円滑にする類人猿分類" width="100%">
         </a>
         <div>
@@ -83,8 +83,6 @@
 
       <!--  -->
 
-
-
   </div>
 
 </template>
@@ -101,6 +99,7 @@ import Hero from './components/Hero'
 import Contents from './components/Contents'
 import Skill from './components/Skill'
 import Background from './components/Background.vue'
+import Loading from './components/Loading.vue'
 
 export default {
   name: 'App',
@@ -111,14 +110,23 @@ export default {
     Hero,
     Contents,
     Skill,
-    Background
+    Background,
+    Loading,
+    Loading
   },
   data () {
     return {
       greeting: '時間帯で挨拶が切り替わる',
-      showMenu: false
+      showMenu: false,
+      heroImgPath: '/static/images/cat-icon.png',
+      showContent: false
     }
 
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showContent = true;
+    }, 500);
   },
   methods: {
      funfun: function() {
@@ -126,8 +134,20 @@ export default {
       },
       closeMenu() {
         this.showMenu = false;
-      }
+      },
+      load: function() {
+            console.log('loaded');
+            this.loading = true;
+          },
+  },
+  watch: {
+    heroImgPath: function(newImg, oldImg) {
+      console.log(newImg);
+
+    }
+
   }
+
 }
 
 </script>
